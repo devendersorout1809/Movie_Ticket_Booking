@@ -1,0 +1,21 @@
+{% extends 'index.html' %}
+{% block body %}
+
+<table class="table">
+    <tr>
+      <th scope="col">Hall Number</th>
+      <th scope="col">In Theater</th>
+    </tr>
+    {% for i in data %}
+    <tr>
+      <td>{{i.number}}</td>
+      <td>{{i.theater.name}}</td>
+
+    </tr>
+    {% endfor %}
+
+</table>
+
+
+
+{% endblock %}

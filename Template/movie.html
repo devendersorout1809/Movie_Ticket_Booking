@@ -1,0 +1,20 @@
+{% extends 'index.html' %}
+{% block body %}
+
+<table class="table">
+    <tr>
+      <th scope="col">Movie Name</th>
+      <th scope="col">In Theater</th>
+    </tr>
+    {% for i in data %}
+    <tr>
+      <td>{{i.name}}</td>
+      <td>{{i.theater.name}}</td>
+    </tr>
+    {% endfor %}
+
+</table>
+
+
+
+{% endblock %}

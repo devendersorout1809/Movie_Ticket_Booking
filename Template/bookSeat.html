@@ -1,0 +1,57 @@
+{% extends 'index.html' %}
+{% block body %}
+
+<h2 align="center">Book Your Ticket</h2>
+<form method="POST" action="/bookTicket">
+    {% csrf_token %}
+Choose Theater
+<select name="theater">
+{% for i in theater %}
+
+<option>{{i.name}}</option>
+
+{% endfor %}
+
+</select>
+<hr>
+Select Movie:
+<select name="movie">
+{% for i in movie %}
+
+<option>{{i.name}}</option>
+
+{% endfor %}
+</select>
+<hr>
+Choose Hall number
+<select name="hall">
+{% for i in hall %}
+
+<option>{{i.number}}</option>
+
+{% endfor %}
+</select>
+<hr>
+Movie Starting Time:
+<select name="show">
+{% for i in show %}
+
+<option>{{i.start_time}}</option>
+
+{% endfor %}
+</select>
+<hr>
+Seat Number
+<select name="seat">
+{% for i in seat %}
+
+<option>{{i.number}}</option>
+{% endfor %}
+</select>
+<hr>
+
+<button type="submit" class="btn btn-primary">Book Seat</button>
+
+</form>
+
+{% endblock %}
